@@ -8,6 +8,7 @@ const corsConfig = {
     Credential: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 };
+app.options("", cors(corsConfig));
 app.use(cors(corsConfig));
 
 dotenv.config({path:path.join(__dirname,"config/config.env")});
