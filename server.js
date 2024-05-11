@@ -3,7 +3,12 @@ const dotenv = require('dotenv');
 const path = require('path');
 const connectDatabase = require('./config/database');
 const cors = require("cors");
-app.use(cors());
+const corsConfig = {
+    orign: "*",
+    Credential: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+};
+app.use(cors(corsConfig));
 
 dotenv.config({path:path.join(__dirname,"config/config.env")});
 
